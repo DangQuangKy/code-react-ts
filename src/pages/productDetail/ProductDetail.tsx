@@ -29,7 +29,7 @@ import { addProduct } from "../../redux/slice/cartSlice";
     useEffect(() => {
       async function fetchData() {
         try {
-          const response = await fetch(`http://localhost:3002/products?id=${id}`);
+          const response = await fetch(`http://localhost:8000/products?id=${id}`);
           const data = await response.json();
           setProduct(data);
         } catch (error) {

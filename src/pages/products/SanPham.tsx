@@ -17,7 +17,7 @@ function SanPham() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("http://localhost:3002/products")
+    fetch("http://localhost:8000/products")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
