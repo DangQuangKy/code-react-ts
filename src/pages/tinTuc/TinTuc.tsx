@@ -6,7 +6,7 @@ import { News } from "../../types/product.type";
 function TinTuc() {
     const[news, setNews] = useState<News[]>([]);
     useEffect(() => {
-        fetch("http://localhost:3002/news")
+        fetch("http://localhost:3000/news")
                .then(response => response.json())
                .then((data) => setNews(data))
     },[]);
