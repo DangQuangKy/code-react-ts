@@ -102,7 +102,6 @@ function LienHe() {
                   onChange={handleChange}
                 />
               </div>
-              <button type="submit">Gửi tin nhắn</button>
             </form>
           </div>
         </div>

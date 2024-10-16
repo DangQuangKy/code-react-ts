@@ -11,51 +11,15 @@ interface wrapper {
 }
 function Main() {
   const getData = async () => {
-    fetch('http://localhost:8000/wrappers')
+    fetch('http://localhost:3000/wrappers')
       .then(res => res.json())
       .then(data => setWrappers(data))
-      //   setTimeout(() => {
-      //     // setLoading(false)
-
-      //   }, 1000);
-      // })
   }
-//   try {
-//     const res = await fetch('http://localhost:8000/data');
-//     const data = await res.json();
-//     console.log(data); // Kiểm tra dữ liệu trả về
-//     if (Array.isArray(data.wrappers)) {
-//       setWrappers(data.wrappers);
-//     } else {
-//       console.error('Dữ liệu không phải là mảng:', data.wrappers);
-//     }
-//   } catch (error) {
-//     console.error('Lỗi khi lấy dữ liệu:', error);
-//   }
-// };
-//   try {
-//     const res = await fetch('http://localhost:8000/home');
-//     const data = await res.json();
-//     if (Array.isArray(data)) {
-//       setWrappers(data);
-//     } else {
-//       console.error('Dữ liệu không phải là mảng:', data);
-//     }
-//   } catch (error) {
-//     console.error('Lỗi khi lấy dữ liệu:', error);
-//   }
-// }
-  // const [loading, setLoading] = useState(true)
-  // const [message, setMessage] = useState<string>('')
+
   const [ wrappers , setWrappers ] = useState<wrapper[]>([])
   useEffect(() => {
     getData()
   }, [])
-
-  // if (loading) {
-  //   return <h1>Loading...</h1>
-  // }
-  
 
   return (
     <div className="main">
@@ -71,32 +35,10 @@ function Main() {
               <div className="text">{wrapper.content}</div>
               <Button variant="contained">Mua ngay</Button>
             </div>
-            {/* <div className="banner-top-right">
-          <img
-            src="https://cdn1332.cdn-template-4s.com/media/banner/banner-2.webp"
-            alt="banner1"
-          />
-           <div className="left-title">
-            <h1>A Legend Rides Again</h1>
-            <div className="text">Rodale Institute has been the leading global advocate for organic and regenerative agriculture for 70+ years. Much of their hands-on research takes place on a 333-acre farm in rural Pennsylvania, so we asked them to test out some of our newest Boss Duck gear right there in the field. Check out our latest Dispatch to see how it held up:
-            </div>
-            <Button variant="contained">Mua ngay</Button>
           </div>
-        </div> */}
-          </div>
-          
         ))}
-
       </div>
       <div className="banner-bottom">
-        {/* {loading 
-        ?
-        <p>Loading...</p>
-        :
-        <p>{ message }</p>
-      }
-       */}
-
         <img src="https://cdn1332.cdn-template-4s.com/media/banner/banner-5.webp" alt="banner-bottom" />
         <div className="bottom-title">
           <h1>Our Responsibility Journey</h1>

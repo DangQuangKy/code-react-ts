@@ -11,7 +11,7 @@ function Search() {
     const [filterData, setFilterData] = useState<Product[]>([]);
 
     useEffect(() => {
-        fetch("http://localhost:3002/products")
+        fetch("http://localhost:3000/products")
         .then((response) => response.json())
         .then(data => {
             setFilterData(data);
